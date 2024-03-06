@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floors Management</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="floors-container">
+        <h1>Floors</h1>
+        
+        <!-- Form for adding a new floor -->
+        <form id="addFloorForm">
+            <input type="number" id="floorLevel" name="level" placeholder="Floor Level" required>
+            <input type="text" id="floorName" name="name" placeholder="Floor Name" required>
+            <button type="submit">Add Floor</button>
+        </form>
+
+        <!-- Floors list (to be populated dynamically) -->
+        <ul id="floorsList">
+            <% floors.forEach(function(floor) { %>
+                <li id="floor-<%= floor.id %>">
+                    <%= floor.level %> - <%= floor.name %>
+                    <!-- Pass floor ID correctly -->
+                    <button class="delete-button" data-floor-id="<%= floor.id %>">Delete</button>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <script src="/js/floors.js"></script>
+</body>
+</html>

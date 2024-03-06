@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms Management</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Rooms Management</h1>
+    <form action="/rooms/add" method="post">
+        <input type="number" name="number" placeholder="Room Number" id="roomNumber" required>
+        <input type="number" name="capacity" placeholder="Capacity" id="roomCapacity" required>
+        <select name="floor" id="roomFloor" required>
+            <!-- Populate floors -->
+            <% floors.forEach(function(floor) { %>
+                <option value="<%= floor.id %>"><%= floor.name %></option>
+            <% }) %>
+        </select>
+        <button type="submit">Add Room</button>
+    </form>
+
+    <!-- Rooms list (to be populated dynamically) -->
+    <ul id="roomsList">
+        <% rooms.forEach(function(room) { %>
+            <li>Room <%= room.number %>: Capacity <%= room.capacity %> - Floor <%= room.floor %></li>
+            <button class="delete-button" data-room-id="<%= room.id %>">Delete</button>
+        <% }) %>
+    </ul>
+
+    <script src="/js/rooms.js"></script>
+</body>
+</html>

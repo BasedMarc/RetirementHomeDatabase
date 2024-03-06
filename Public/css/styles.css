@@ -1,0 +1,107 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+ul,
+li,
+form,
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Set a background color and font family */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+/* Center content vertically and horizontally */
+.floors-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Style the heading */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style form elements */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="number"],
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the list of floors */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style delete and update buttons */
+.delete-button,
+.update-button {
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover,
+.update-button:hover {
+    background-color: #ff0000;
+}
+
+.update-button {
+    background-color: #007bff;
+    margin-left: 5px;
+}
+
+.update-button:hover {
+    background-color: #0056b3;
+}

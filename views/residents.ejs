@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residents Management</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Residents Management</h1>
+    <form id="addResidentForm">
+        <input type="text" name="firstname" placeholder="First Name" id="residentFirstName">
+        <input type="text" name="lastname" placeholder="Last Name" id="residentLastName">
+        <input type="number" name="age" placeholder="Age" id="residentAge">
+        <select name="room" id="residentRoom">
+            <!-- Populate rooms -->
+            <% rooms.forEach(function(room) { %>
+                <option value="<%= room.id %>">Room <%= room.number %></option>
+            <% }) %>
+        </select>
+        <button type="submit">Add Resident</button>
+    </form>
+
+    <!-- Residents list (to be populated dynamically) -->
+<!-- Residents list (to be populated dynamically) -->
+    <ul id="residentsList">
+        <% residents.forEach(function(resident) { %>
+            <li><%= resident.firstname %> <%= resident.lastname %>, Age: <%= resident.age %>
+                <button class="delete-button" data-resident-id="<%= resident.id %>">Delete</button>
+            </li>
+        <% }) %>
+    </ul>
+
+    <!-- Include your JavaScript file at the end -->
+    <script src="/js/residents.js"></script>
+</body>
+</html>
